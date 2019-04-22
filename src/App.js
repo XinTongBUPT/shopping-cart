@@ -6,6 +6,7 @@ import ReduxThunk from 'redux-thunk';
 import { AppNavigator } from './config/route';
 import * as reducers from './reducers';
 
+
 const rootReducer = combineReducers(reducers);
 const store = createStore(rootReducer, {}, applyMiddleware(ReduxThunk));
 
