@@ -1,20 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch} from "react-router-dom";
 import {
-    Shop,
-    Move,
-    Login,
-    Addroutine
+    Shop
 } from '../pages';
 
 const AppNavigator = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={Shop} />
-            <Route exact path="/move" component={Move} />
+            {/* <Route exact path="/move" component={Move} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/routine" component={Shop} />
-            <Route exact path="/addroutine" component={Addroutine} />
+            <Route exact path="/addroutine" component={Addroutine} /> */}
         </Switch>
     </BrowserRouter>
 )

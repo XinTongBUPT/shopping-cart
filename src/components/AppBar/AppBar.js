@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
   root: {
     flexGrow: 1,
-    color:'#3f51b5',
+    color:'#666',
     textalign:'center',
     fontStyle:'italic',
     fontWeight:"bold",
