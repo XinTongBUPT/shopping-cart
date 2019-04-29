@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import {
     TextField,
-    AppBar,
+    // AppBar,
     Button
 } from '../../components';
 import './styles.css';
@@ -15,7 +15,7 @@ function MoveComponent(props) {
     const { classes } = props;
     return (
         <div style={{margin:'10px'}}>
-            <AppBar /> 
+            {/* <AppBar />  */}
             <div class="page-content">
                 <h2>Please Login/Register</h2>
                 <TextField label='user' placeholder='username' style={{marginBottom:'10px'}}/><br/>

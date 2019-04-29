@@ -3,3 +3,12 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 100px;
 }
+
+.shelf-item__buy-btn{
+    background-color: #1b1a20;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }

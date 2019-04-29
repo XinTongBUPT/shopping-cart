@@ -3,19 +3,25 @@ import Filter from "./Filter/index";
 import ShelfHeader from "./ShelfHeader/index";
 import ProductList from "./ProductList/index";
 import Sort from "./Sort/index";
-import "./style.css"
+import Data from "./data.json";
+import "./style.scss"
 
 class Shelf extends Component {
+
+    constructor(props) {
+        super(props);
+    };
+
     render(){
         return (
-            <div>
+            <React.Fragment>
                 < Filter />
-                <div className="shelf">
+                <div className="shelf-container">
                     < Sort />
-                    < ShelfHeader />
-                    < ProductList />
+                    < ShelfHeader len={Object.keys(Data.products).length}/>
+                    < ProductList data={Data}/>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
