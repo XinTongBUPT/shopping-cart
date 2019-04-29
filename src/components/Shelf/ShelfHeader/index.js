@@ -1,13 +1,21 @@
-import React, { Component } from "react";
-import "./style.css";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class ShelfHeader extends Component {
-    render () {
-        return (
-            <div className="header">n products found</div>
-        );
-    }
-}
+// import Sort from '../Sort';
+
+const ShelfHeader = props => {
+  return (
+    <div className="shelf-container-header">
+      <small className="products-found">
+        <span>{props.len} Product(s) found.</span>
+      </small>
+      {/* <Sort /> */}
+    </div>
+  );
+};
+
+ShelfHeader.propTypes = {
+  productsLength: PropTypes.number.isRequired
+};
 
 export default ShelfHeader;
-
