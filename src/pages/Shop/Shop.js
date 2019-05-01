@@ -5,7 +5,7 @@ import firebase from '../../firebaseTest.js';
 import {
     Shelf,
     // Filter,
-    // FloatCart,
+    FloatCart,
     GithubCorner
 } from '../../components';
 import './styles.css';
@@ -27,7 +27,7 @@ class RoutineComponent extends Component {
             {/* <Filter /> */}
             <Shelf />
           </main>
-          {/* <FloatCart /> */}
+          <FloatCart />
         </React.Fragment>
       );
     }
