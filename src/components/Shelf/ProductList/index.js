@@ -6,7 +6,7 @@ import Product from './Product';
 // import "./style.css"
 
 const ProductList = (props) => {
-    const renderedList = props.data.products.map(product => {
+    const renderedList = props.products.map(product => {
         return <Product product={product} key={product.name} />
     }
 );   
@@ -17,3 +17,4 @@ const ProductList = (props) => {
 }
 
 export default ProductList;
+

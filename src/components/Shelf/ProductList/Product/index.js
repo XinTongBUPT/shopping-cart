@@ -1,19 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Thumb from '../../../Thumb';
-
-import { formatPrice } from '../../../../services/util';
+import { formatPrice } from '../../../../util';
 import { addProduct } from '../../../../reducers/reducer';
 
 const Product = ({ product, addProduct }) => {
 
-    
-
     let formattedPrice = formatPrice(product.price, product.currencyId);
-
     let productInstallment;
-
     if (!!product.installments) {
       const installmentPrice = product.price / product.installments;
 
@@ -21,7 +15,8 @@ const Product = ({ product, addProduct }) => {
         <div className="installment">
           <span>or {product.installments} x</span>
           <b>
-          {product.currencyFormat}{formatPrice(installmentPrice, product.currencyId)}
+          {product.currencyFormat}
+          {formatPrice(installmentPrice, product.currencyId)}
           </b>
         </div>
       );
