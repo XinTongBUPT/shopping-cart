@@ -48,7 +48,7 @@ class Shelf extends Component {
         
         return (
             <React.Fragment>
-                <div classNAme={classes.shelf}>
+                
                     <FormControl component="fieldset" className='filterform'>
                         <FormLabel component="legend">Size</FormLabel>
                         <RadioGroup className='radio'
@@ -56,7 +56,7 @@ class Shelf extends Component {
                         name="Size"
                         value={this.state.value1}
                         onChange={this.handleChange}
-                        >
+                        style={{display:'inline-block'}}>
                         <FormControlLabel value="ALL" control={<Radio />} label="ALL" labelPlacement="top"/>
                         <FormControlLabel value="XS" control={<Radio />} label="XS" labelPlacement="top"/>
                         <FormControlLabel value="S" control={<Radio />} label="S" labelPlacement="top"/>
@@ -65,8 +65,10 @@ class Shelf extends Component {
                         <FormControlLabel value="L" control={<Radio />} label="L" labelPlacement="top"/>
                         <FormControlLabel value="XL" control={<Radio />} label="XL" labelPlacement="top"/>
                         <FormControlLabel value="XXL" control={<Radio />} label="XXL" labelPlacement="top"/>
+                        
                         </RadioGroup>
                     </FormControl>
+                    
                     <div className="shelf-container">
                         {/* < ShelfHeader len={Object.keys(products).length}/>
                         < ProductList products={products}/> */}
@@ -75,7 +77,7 @@ class Shelf extends Component {
                             <Product product={product}  key={product.name} />)}
                         </div>
                     </div>
-                </div>
+               
             </React.Fragment>
         );
     }
