@@ -4,8 +4,8 @@ import firebase from '../../firebaseTest.js';
 
 import {
     Shelf,
-    // Filter,
-    FloatCart,
+    Filter,
+    Cart,
     GithubCorner
 } from '../../components';
 import './styles.css';
@@ -21,13 +21,13 @@ class RoutineComponent extends Component {
     render() {
       return (
         <React.Fragment>
-          <br/><br/><br/><br/>
+          <h1 align="center" >The TOP Shop</h1>
           <GithubCorner />
           <main>
             {/* <Filter /> */}
             <Shelf />
           </main>
-          <FloatCart />
+          <Cart />
         </React.Fragment>
       );
     }

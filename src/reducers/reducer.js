@@ -1,31 +1,18 @@
 import axios from 'axios';
-
+// import { productsAPI } from '../util';
+import Data from "../data/data.json";
 //Action Types
-// export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const LOAD_CART= 'LOAD_CART';
 export const ADD_PRODUCT= 'ADD_PRODUCT';
 export const REMOVE_PRODUCT= 'REMOVE_PRODUCT';
 export const UPDATE_CART = 'UPDATE_CART';
 export const UPDATE_FILTER = 'UPDATE_FILTER';
+export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 
 
 
 const INITIAL_STATE = {
-    products:[
-        {
-          id: 12,
-          sku: 12064273040195392,
-          title: "Cat Tee Black T-Shirt",
-          description: "4 MSL",
-          availableSizes: ["S", "XS"],
-          style: "Black with custom print",
-          price: 10.9,
-          installments: 9,
-          currencyId: "USD",
-          currencyFormat: "$",
-          isFreeShipping: true
-        },
-    ],
+    products:[],
     data: {
         productQuantity: 0,
         installments: 0,
@@ -40,11 +27,11 @@ const INITIAL_STATE = {
 //Reducers
 export default function reducer(state = INITIAL_STATE, action) {
     switch (action.type) {
-        // case FETCH_PRODUCTS:
-        // return {
-        //     ...state,
-        //     products: action.payload
-        // };
+        case FETCH_PRODUCTS:
+        return {
+            ...state,
+            products: action.payload
+        };
         case LOAD_CART:
           return {
             ...state,
@@ -125,13 +112,67 @@ export const updateCart = cartProducts => dispatch => {
   export const updateFilters = filters => ({
     type: UPDATE_FILTER,
     payload: filters
-  });
+});
 
-// export const toggle_modal = (id) => {
-//     return (dispatch) => {
-//         dispatch({
-//             type: TOGGLE_MODAL,
-//             payload: id
-//         })
-//     };
-// }
+const compare = {
+  lowestprice: (a, b) => {
+    if (a.price < b.price) return -1;
+    if (a.price > b.price) return 1;
+    return 0;
+  },
+  highestprice: (a, b) => {
+    if (a.price > b.price) return -1;
+    if (a.price < b.price) return 1;
+    return 0;
+  }
+};
+
+// export const fetchProducts = (filters, callback) => dispatch => {
+//   return axios
+//     .get(productsAPI)
+//     .then(res => {
+//       let { products } = res.data;
+
+//       if (!!filters && filters.length > 0) {
+//         products = products.filter(p =>
+//           filters.find(f => p.availableSizes.find(size => size === f))
+//         );
+//       }
+
+//       if (!!callback) {
+//         callback();
+//       }
+
+//       return dispatch({
+//         type: FETCH_PRODUCTS,
+//         payload: products
+//       });
+//     })
+//     .catch(err => {
+//       console.log('Could not fetch products. Try again later.');
+//     });
+// };
+
+export const fetchProducts = (filters, callback) => dispatch => {
+
+      let { products } = Data.products;
+      console.log({products})
+
+
+      if (!!filters && filters.length > 0) {
+        products = products.filter(p =>
+          filters.find(f => p.availableSizes.find(size => size === f))
+        );
+      }
+
+      if (!!callback) {
+        callback();
+      }
+
+      return dispatch({
+        type: FETCH_PRODUCTS,
+        payload: products
+      });
+
+};
+
