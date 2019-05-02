@@ -36,9 +36,10 @@ class Scart extends Component {
           onMouseOut={() => this.handleMouseOut()}
           onClick={() => removeProduct(product)}
         />
-        <Thumb
+        <img
           classes="shelf-item__thumb"
-          src={require(`../../static/products//${product.sku}_2.jpg`)}
+          style={{width: "50px"}}
+          src={require(`../../static/products/${product.sku}_2.jpg`)}
           alt={product.title}
         />
         <div className="shelf-item__details">
