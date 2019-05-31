@@ -1,5 +1,5 @@
 # shopping-cart
-This is a shopping cart website using React.js and deployed on Firebase. I realized sample and relatively great user interface and finished the data transfer between component bu using Redux.
+This is a shopping cart website using React.js and deployed on Firebase. I realized sample and relatively great user interface and finished the data transfer between component by using Redux.
 
 # demo URL
 https://shopcart-f4307.firebaseapp.com/
